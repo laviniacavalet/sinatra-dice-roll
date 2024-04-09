@@ -16,20 +16,18 @@ get("/zebra") do
   "We must add a route for each path we want to support"
 end
 
-require "sinatra/reloader"
-
 get("/giraffe") do
   "Hopefully this shows up without having to restart the server 🤞🏾"
 end
 
 get("/dice/2/6") do
   first_die = rand(1..6)
-  second_die = rand(1..6)
+	second_die = rand(1..6)
   sum = first_die + second_die
-
-  @outcome = "You rolled a #{first_die} and a #{second_die} for a total of #{sum}."
-
-  erb(:two_six)
+	
+	@outcome = "You rolled a #{first_die} and a #{second_die} for a total of #{sum}."
+	
+	erb(:two_six)
 end
 
 get("/dice/2/10") do
@@ -39,7 +37,7 @@ get("/dice/2/10") do
 	
 	@outcome = "You rolled a #{first_die} and a #{second_die} for a total of #{sum}."
 	
-	erb(:two_ten)
+  erb(:two_ten)
 end
 
 get("/dice/1/20") do
@@ -59,5 +57,5 @@ get("/dice/5/4") do
 	
 	@outcome = "You rolled a #{first_die}, a #{second_die}, a #{third_die}, and a #{fourth_die} for a total of #{sum}."
 	
-	erb(:five_four)
+  erb(:five_four)
 end
